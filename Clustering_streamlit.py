@@ -38,8 +38,7 @@ ax.annotate('Possible elbow point', xy=(5, 80000), xytext=(5, 150000), xycoords=
             arrowprops=dict(arrowstyle='->', connectionstyle='arc3', color='blue',lw=2))
 
 st.header("Elbow")
-st.set_option('deprecation.showPyplotGlobalUse', False)
-elbow_plot = st.pyplot()
+elbow_plot = st.pyplot(fig)
 
 st.sidebar.header("Nilai Jumlah K (klaster)")
 clust = st.sidebar.slider("Piih jumlah cluster :", 2,10,3,1)
@@ -61,7 +60,7 @@ def k_means(n_clust):
             size=12, weight='bold', color='black')
     
     st.header("Cluster Plot")
-    st.pyplot()
+    st.pyplot(plt)
     st.write(X)
 
 k_means(clust)
